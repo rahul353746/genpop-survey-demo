@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GenPop Survey Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f9f9f9; color: #333; }
+    .question { margin-bottom: 20px; }
+    label { display: block; margin: 5px 0; }
+    button { padding: 10px 20px; font-size: 16px; background: #007bff; color: #fff; border: none; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .thanks { font-size: 1.2em; color: green; display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>General Population Survey</h1>
+  <form id="surveyForm">
+    <div class="question">
+      <label>1. Are you currently living in the United States?</label>
+      <label><input type="radio" name="q1" value="Yes" required> Yes</label>
+      <label><input type="radio" name="q1" value="No"> No</label>
+    </div>
+
+    <div class="question">
+      <label>2. What is your age?</label>
+      <select name="q2" required>
+        <option value="">Select</option>
+        <option>18–24</option>
+        <option>25–34</option>
+        <option>35–44</option>
+        <option>45–54</option>
+        <option>55–64</option>
+        <option>65 or older</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label>3. What is your gender?</label>
+      <label><input type="radio" name="q3" value="Male" required> Male</label>
+      <label><input type="radio" name="q3" value="Female"> Female</label>
+      <label><input type="radio" name="q3" value="Non-binary"> Non-binary / Third gender</label>
+      <label><input type="radio" name="q3" value="Prefer not to say"> Prefer not to say</label>
+    </div>
+
+    <div class="question">
+      <label>4. How often do you purchase groceries online?</label>
+      <label><input type="radio" name="q4" value="Never" required> Never</label>
+      <label><input type="radio" name="q4" value="Rarely"> Rarely</label>
+      <label><input type="radio" name="q4" value="Occasionally"> Occasionally</label>
+      <label><input type="radio" name="q4" value="Frequently"> Frequently</label>
+    </div>
+
+    <div class="question">
+      <label>5. What’s one thing you’d like to improve in your daily life?</label>
+      <input type="text" name="q5" style="width: 100%; padding: 8px;" required>
+    </div>
+
+    <button type="submit">Submit Survey</button>
+  </form>
+
+  <p class="thanks" id="thankYouMsg">Thank you for completing the demo survey!</p>
+
+  <script>
+    document.getElementById('surveyForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('thankYouMsg').style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
